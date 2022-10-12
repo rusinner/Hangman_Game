@@ -8,3 +8,17 @@
 body{
 background:#333;
 }
+
+.container{
+    font-size: 16;
+    background-color:#a72b86 ;
+    width: 90vh;
+    max-width: 34em;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50% ;
+    left: 50%;
+    border-radius: .6em;
+    padding: 3em;
+    box-shadow: 0 1.8em 2.4em rgba(232, 45, 188, 0.25);
+}
