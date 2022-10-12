@@ -21,4 +21,17 @@ body {
   border-radius: 0.6em;
   padding: 3em;
   box-shadow: 0 1.8em 2.4em rgba(232, 45, 188, 0.25);
+}
+.container #options-container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2em 0 2.4em 0;
+}
+.container #options-container button {
+  padding: 1.6em;
+  border: none;
+  border-radius: 0.6em;
+  background: linear-gradient(145deg, #b32e8f, #962779);
+  box-shadow: 9px 9px 18px #751e5e, -9px -9px 18px #d938ae;
 }/*# sourceMappingURL=styles.css.map */
