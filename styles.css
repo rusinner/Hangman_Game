@@ -53,14 +53,14 @@ body {
   background-color: #333;
   color: #12050f;
 }
-.container #letter-container {
+.container .letter-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.6em;
 }
-.container #letter-container button {
+.container .letter-container button {
   height: 2.8em;
   width: 2.8em;
   border-radius: 0.3em;
@@ -70,7 +70,7 @@ body {
   border: none;
   font-weight: 800;
 }
-.container #letter-container button:hover {
+.container .letter-container button:hover {
   transform: scale(1.1);
 }
 .container .new-game-popup {
@@ -88,4 +88,10 @@ body {
 }
 .container .hide {
   display: none;
+}
+.container #user-input-section {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  margin: 0.6em 0 1.2em 0;
 }/*# sourceMappingURL=styles.css.map */
