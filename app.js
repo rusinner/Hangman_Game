@@ -143,12 +143,118 @@ const initializer = () => {
                             blocker();
                         }
                     }
+
                 });
+            }else{
+                //lose count
+                count += 1;
+                //for drawing man
+                drawMan(count);
+                //count must be == 6 head,body,left arm,right arm,
+                //left foot,right foot
+                if (count == 6) {
+                    resultText.innerHTML = `<h2 class="lose-msg">You Lose!!!</h2>
+                    <p>The world was <span>${chosenWord}</span></p>`;
+                    blocker();
+                }
             }
+            //disabled clicked button
+            button.disabled = true;
         });
         letterContainer.appendChild(button);
     }
     displayOptions();
+
+    //call to canvasCreator to clear previous canvas and 
+    //create the initial one
+    let {initialDrawing} = canvasCreator();
+    //initial drawing would draw the frame
+    initialDrawing();
+};
+
+//canvas
+const canvasCreator = () => {
+    let context = canvas.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = '#333';
+    context.lineWidth = 3;
+
+    //for drawing lines
+
+    const drawLine = (fromX,fromY,toX,toY) =>{
+        context.moveTo(fromX,fromY);
+        context.lineTo(toX,toY);
+        context.stroke();
+    };
+
+    const head = () => {
+      context.beginPath();
+      context.arc(70,30,10,0,Math.PI * 2, true);
+      context.stroke();
+    };
+
+    const body = () => {
+        drawLine(70,40,70,100);
+    };
+
+    const leftArm = () => {
+        drawLine(70,50,50,80);
+    }
+
+    const rightArm = () => {
+        drawLine(70,50,90,80);
+    };
+
+    const leftLeg = () => {
+        drawLine(70,80,50,110);
+    };
+
+    const rightLeg = () => {
+        drawLine(70,80,90,110);
+    };
+
+    //initial frame
+    const initialDrawing = () => {
+        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+        //bottom line
+        drawLine(10,130,130,130);
+        //left line
+        drawLine(10,10,10,131);
+        //top line
+        drawLine(10,10,70,10);
+        //samll top line
+        drawLine(70,10,70,20);
+    };
+
+    return  { initialDrawing,head,body,leftArm,rightArm,leftLeg,rightLeg };
+};
+
+//drawMan
+
+const drawMan = (count) =>{
+  let {head,body,leftArm,rightArm,leftLeg,rightLeg} = canvasCreator();
+  switch (count){
+    case 1:
+        head();
+        break;
+    case 2:
+        body();
+        break;
+    case 3:
+        leftArm();
+        break;
+    case 4:
+        rightArm();
+        break;
+    case 5:
+        leftLeg();
+        break;
+    case 6:
+        rightLeg();
+        break;   
+    default:
+        break;             
+  }
 };
 //new game
 newGameButton.addEventListener('click',initializer);

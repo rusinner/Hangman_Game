@@ -49,10 +49,6 @@ body {
 .container #options-container .active {
   background: #d43cab;
 }
-.container #options-container .disabled {
-  background-color: #333;
-  color: #12050f;
-}
 .container .letter-container {
   width: 100%;
   display: flex;
@@ -72,6 +68,10 @@ body {
 }
 .container .letter-container button:hover {
   transform: scale(1.1);
+}
+.container .letter-container button:disabled {
+  background-color: #333;
+  color: #12050f;
 }
 .container .new-game-popup {
   background-color: #fff;
@@ -94,4 +94,43 @@ body {
   justify-content: center;
   font-size: 1.8em;
   margin: 0.6em 0 1.2em 0;
+}
+.container #canvas {
+  display: block;
+  margin: auto;
+  border: 2px solid #333;
+}
+.container #new-game-container {
+  background-color: #333;
+}
+.container #new-game-container #result-text h2 {
+  color: #d43cab;
+  font-size: 1.8em;
+  text-align: center;
+}
+.container #new-game-container #result-text p {
+  color: #962779;
+  font-size: 1.25em;
+  margin: 1em 0 2em 0;
+}
+.container #new-game-container #result-text span {
+  color: #fb10bc;
+  font-weight: 600;
+}
+.container #new-game-container #result-text .win-msg {
+  color: #fb10bc;
+}
+.container #new-game-container #result-text .lose-msg {
+  color: #751e5e;
+}
+
+#new-game-button {
+  font-size: 1.25em;
+  padding: 0.5em 1em;
+  background-color: #fb10bc;
+  border: 3px solid #962779;
+  cursor: pointer;
+}
+#new-game-button:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=styles.css.map */
